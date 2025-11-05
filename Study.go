@@ -3,14 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	a := [4]int{5, 1, 2, 5}
-	b := [6]int{4, 2, 5, 1, 1, 2}
-	var x []int = a[0:3]
-	var y []int = b[0:4]
-	var z []int = append(x, b[0])
-	fmt.Println(x, ",", y)
-	fmt.Println(x)
-	fmt.Println(z)
+	var result int
+	fmt.Scan(&result)
+	if result >= 3 {
+		fmt.Println("Победа")
+	} else if result == 3 {
+		fmt.Println("Ничья")
+	} else {
+		fmt.Println("Поражение")
+	}
 
 }
 
