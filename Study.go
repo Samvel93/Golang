@@ -7,20 +7,20 @@ import (
 
 func main() {
 	a := []int{4, 8, 15, 16, 23, 42, 4, 15}
+	b := []int{4, 11, 14, 8, 2, 2}
 	searchA := make(map[int]bool)
+	searchB := make(map[int]bool)
 	for _, i := range a {
 		searchA[i] = true
 	}
-	var uniqA []int
-	for num := range searchA {
-		uniqA = append(uniqA, num)
-	}
-	b := []int{4, 11, 14, 8, 2, 2}
-	searchB := make(map[int]bool)
 	for _, i := range b {
 		searchB[i] = true
 	}
+	var uniqA []int
 	var uniqB []int
+	for num := range searchA {
+		uniqA = append(uniqA, num)
+	}
 	for num := range searchB {
 		uniqB = append(uniqB, num)
 	}
