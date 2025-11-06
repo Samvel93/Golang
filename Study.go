@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strings"
 )
 
 func main() {
@@ -24,9 +25,20 @@ func main() {
 	for num := range searchB {
 		uniqB = append(uniqB, num)
 	}
+	var intert []int
+	for k := range searchA {
+		if searchB[k] {
+			intert = append(intert, k)
+		}
+	}
+	comma := strings.Trim(fmt.Sprint(uniqA), "[]") //check later
+	comma = strings.ReplaceAll(comma, " ", ",")    // something wrong here
+	fmt.Println(comma)
+	sort.Ints(intert)
 	sort.Ints(uniqA)
 	sort.Ints(uniqB)
 	fmt.Println(uniqA, ",", uniqB)
+	fmt.Println(intert)
 
 }
 
