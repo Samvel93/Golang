@@ -5,14 +5,23 @@ import "fmt"
 func main() {
 	a := []int{4, 8, 15, 16, 23, 42, 4, 15}
 	b := []int{4, 11, 14, 8, 2, 2}
-	uniqA := make(map[int]bool)
-	uniqB := make(map[int]bool)
+	searchA := make(map[int]bool)
+	searchB := make(map[int]bool)
 	for _, i := range a {
-		uniqA[i] = true
+		searchA[i] = true
 	}
 	for _, i := range b {
-		uniqB[i] = true
+		searchB[i] = true
 	}
+	var uniqA []int
+	var uniqB []int
+	for num := range searchA {
+		uniqA = append(uniqA, num)
+	}
+	for num := range searchB {
+		uniqB = append(uniqB, num)
+	}
+
 	fmt.Println(uniqA, uniqB)
 
 }
