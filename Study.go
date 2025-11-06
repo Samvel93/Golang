@@ -26,7 +26,7 @@ func main() {
 	}
 	sort.Ints(uniqA)
 	sort.Ints(uniqB)
-	fmt.Println(uniqA, uniqB)
+	fmt.Println(uniqA, ",", uniqB)
 
 }
 
