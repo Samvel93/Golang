@@ -29,6 +29,12 @@ func main() {
 		if searchB[k] {
 			intert = append(intert, k)
 		}
+	}
+	var uniqelem []int
+	for k := range searchA {
+		if !searchB[k] {
+			uniqelem = append(uniqelem, k)
+		}
 
 	}
 	sort.Ints(intert)
