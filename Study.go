@@ -31,16 +31,17 @@ func main() {
 		}
 	}
 	var uniqelem []int
-	for k := range searchA {
-		if !searchB[k] {
-			uniqelem = append(uniqelem, k)
+	for t := range searchA {
+		if !searchB[t] {
+			uniqelem = append(uniqelem, t)
 		}
 	}
-	for k := range searchB {
-		if !searchA[k] {
-			uniqelem = append(uniqelem, k)
+	for t := range searchB {
+		if !searchA[t] {
+			uniqelem = append(uniqelem, t)
 		}
 	}
+	uniqelem = append(uniqelem, intert...)
 	sort.Ints(intert)
 	sort.Ints(uniqA)
 	sort.Ints(uniqB)
