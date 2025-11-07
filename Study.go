@@ -35,14 +35,18 @@ func main() {
 		if !searchB[k] {
 			uniqelem = append(uniqelem, k)
 		}
-
+	}
+	for k := range searchB {
+		if !searchA[k] {
+			uniqelem = append(uniqelem, k)
+		}
 	}
 	sort.Ints(intert)
 	sort.Ints(uniqA)
 	sort.Ints(uniqB)
 	fmt.Println(uniqA, ",", uniqB)
 	fmt.Println(intert)
-
+	fmt.Println(uniqelem)
 }
 
 /*
