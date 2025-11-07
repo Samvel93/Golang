@@ -30,10 +30,13 @@ func main() {
 		if searchB[k] {
 			intert = append(intert, k)
 		}
+
 	}
-	comma := strings.Trim(fmt.Sprint(uniqA), "[]") //check later
-	comma = strings.ReplaceAll(comma, " ", ",")    // something wrong here
-	fmt.Println(comma)
+	commaA := strings.Trim(fmt.Sprint(uniqA), "[]") //check later
+	commaA = strings.ReplaceAll(commaA, " ", ",")
+	commaB := strings.Trim(fmt.Sprint(uniqB), "[]")
+	commaB = strings.ReplaceAll(commaB, " ", ",")
+	fmt.Println(commaA, ",", commaB)
 	sort.Ints(intert)
 	sort.Ints(uniqA)
 	sort.Ints(uniqB)
