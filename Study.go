@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"sort"
-	"strings"
 )
 
 func main() {
@@ -32,11 +31,6 @@ func main() {
 		}
 
 	}
-	commaA := strings.Trim(fmt.Sprint(uniqA), "[]") //check later
-	commaA = strings.ReplaceAll(commaA, " ", ",")
-	commaB := strings.Trim(fmt.Sprint(uniqB), "[]")
-	commaB = strings.ReplaceAll(commaB, " ", ",")
-	fmt.Println(commaA, ",", commaB)
 	sort.Ints(intert)
 	sort.Ints(uniqA)
 	sort.Ints(uniqB)
