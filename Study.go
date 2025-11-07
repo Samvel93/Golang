@@ -42,6 +42,7 @@ func main() {
 		}
 	}
 	uniqelem = append(uniqelem, intert...)
+	sort.Ints(uniqelem)
 	sort.Ints(intert)
 	sort.Ints(uniqA)
 	sort.Ints(uniqB)
