@@ -1,4 +1,4 @@
-package main
+/*package main
 
 import (
 	"fmt"
@@ -51,7 +51,7 @@ func main() {
 	fmt.Println(uniqelem)
 }
 
-/*
+
 -Вернуть два слайса с уникальными элементами.
 -Найти пересечения значений в двух слайсах.
 -Вернуть слайс с уникальными элементами из слайсов a и b.
@@ -60,4 +60,41 @@ func main() {
 [5, 1, 2], [4, 2, 5, 1]
 [5, 1, 2]
 [5, 1, 2, 4]
+
+package main
+
+import "fmt"
+
+func main() {
+	s := "пока"
+	runes := []rune(s)
+	fmt.Println(len(runes))
+	count := len([]rune(s))
+	fmt.Println(count)
+	countr := 0
+	for range s {
+		countr++
+	}
+	fmt.Println(countr)
+
+}
+
 */
+
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	n, err := strconv.Atoi("111") // 123
+	if err != nil {
+		fmt.Println("Ошибка конвертации:", err)
+	} else {
+		fmt.Println(n)
+	}
+	s := strconv.Itoa(123) // "123"
+	fmt.Println(s)
+}
