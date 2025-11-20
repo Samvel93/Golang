@@ -3,50 +3,39 @@ package main
 import "fmt"
 
 func main() {
-	elements := map[string]map[string]string{
-		"H": map[string]string{
+	gases := map[string]map[string]string{
+		"H": {
 			"name":  "Hydrogen",
 			"state": "gas",
 		},
-		"He": map[string]string{
+		"He": {
 			"name":  "Helium",
 			"state": "gas",
 		},
-		"Li": map[string]string{
-			"name":  "Lithium",
+	}
+	solids := map[string]map[string]string{
+		"Fe": {
+			"name":  "Iron",
 			"state": "solid",
 		},
-		"Be": map[string]string{
-			"name":  "Beryllium",
+		"Au": {
+			"name":  "Gold",
 			"state": "solid",
-		},
-		"B": map[string]string{
-			"name":  "Boron",
-			"state": "solid",
-		},
-		"C": map[string]string{
-			"name":  "Carbon",
-			"state": "solid",
-		},
-		"N": map[string]string{
-			"name":  "Nitrogen",
-			"state": "gas",
-		},
-		"O": map[string]string{
-			"name":  "Oxygen",
-			"state": "gas",
-		},
-		"F": map[string]string{
-			"name":  "Fluorine",
-			"state": "gas",
-		},
-		"Ne": map[string]string{
-			"name":  "Neon",
-			"state": "gas",
 		},
 	}
 
-	if el, ok := elements["Li"]; ok {
+	var symbols string
+	fmt.Println("Enter element symbols separated by spaces:")
+	fmt.Scanln(&symbols)
+	if el, ok := gases[symbols]; ok {
 		fmt.Println(el["name"], el["state"])
+	} else if !ok {
+		fmt.Println("Element not found in gases, checking solids...")
+		fmt.Scanln(&symbols)
+		if el, ok := solids[symbols]; ok {
+			fmt.Println(el["name"], el["state"])
+		}
+	} else {
+		fmt.Println("Element not found")
 	}
 }
