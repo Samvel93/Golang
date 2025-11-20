@@ -1,41 +1,19 @@
 package main
 
-import "fmt"
-
 func main() {
-	gases := map[string]map[string]string{
-		"H": {
-			"name":  "Hydrogen",
-			"state": "gas",
-		},
-		"He": {
-			"name":  "Helium",
-			"state": "gas",
-		},
+	x := []int{
+		48, 96, 86, 68,
+		57, 82, 8, 70,
+		37, 34, 83, 27,
+		19, 97, 9, 17,
 	}
-	solids := map[string]map[string]string{
-		"Fe": {
-			"name":  "Iron",
-			"state": "solid",
-		},
-		"Au": {
-			"name":  "Gold",
-			"state": "solid",
-		},
-	}
-
-	var symbols string
-	fmt.Println("Enter element symbols separated by spaces:")
-	fmt.Scanln(&symbols)
-	if el, ok := gases[symbols]; ok {
-		fmt.Println(el["name"], el["state"])
-	} else if !ok {
-		fmt.Println("Element not found in gases, checking solids...")
-		fmt.Scanln(&symbols)
-		if el, ok := solids[symbols]; ok {
-			fmt.Println(el["name"], el["state"])
+	min := x[0]
+	minIdx := 1
+	for i, v := range x {
+		if v < min {
+			min = v
+			minIdx = i
 		}
-	} else {
-		fmt.Println("Element not found")
 	}
+	println("min:", min, "at index", minIdx)
 }
