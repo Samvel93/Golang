@@ -1,15 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func eraseindex[T any](s []T, index int) []T {
+	return append(s[:index], s[index+1:]...)
+}
 
 func main() {
-	var x int
-	fmt.Scan(&x)
-	if x > 1000 {
-		fmt.Println("Apple")
-	} else if x >= 500 && x <= 1000 {
-		fmt.Println("Samsung")
-	} else {
-		fmt.Println("Nokia")
-	}
+	s := []int{1, 2, 3, 4, 5}
+	s = eraseindex(s, 2)
+	fmt.Println(s)
 }
