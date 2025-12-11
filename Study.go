@@ -1,19 +1,16 @@
 package main
 
+import "fmt"
+
+func MaskLink(b string) string {
+	out := make([]byte, 0, len(b))
+	for i := 0; i < len(b); i++ {
+		out = append(out, b[i])
+	}
+	return string(out)
+
+}
+
 func main() {
-	x := []int{
-		48, 96, 86, 68,
-		57, 82, 8, 70,
-		37, 34, 83, 27,
-		19, 97, 9, 17,
-	}
-	min := x[0]
-	minIdx := 1
-	for i, v := range x {
-		if v < min {
-			min = v
-			minIdx = i
-		}
-	}
-	println("min:", min, "at index", minIdx)
+	fmt.Println(MaskLink("Here's my spammy page: http://hehefouls.netHAHAHA see you."))
 }
