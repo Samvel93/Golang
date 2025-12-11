@@ -9,7 +9,7 @@ func eraseindex[T any](s []T, index int) []T {
 }
 
 func main() {
-	s := []int{1, 2, 3, 4, 5}
-	s = eraseindex(s, 2)
-	fmt.Println(s)
+	x := []int{1, 2, 3, 4, 5}
+	x = eraseindex(x, 2)
+	fmt.Println(x)
 }
