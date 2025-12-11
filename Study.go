@@ -6,7 +6,7 @@ func MaskLink(b string) string {
 	out := make([]byte, 0, len(b))
 	for i := 0; i < len(b); i++ {
 		if i+7 <= len(b) && b[i:i+7] == "http://" {
-			out = append(out, "HTTP"...)
+			out = append(out, []byte("HTTP")...)
 			i += 6
 		} else {
 			out = append(out, b[i])
