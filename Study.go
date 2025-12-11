@@ -3,14 +3,25 @@ package main
 import "fmt"
 
 func MaskLink(b string) string {
-	out := make([]byte, 0, len(b))
-	for i := 0; i < len(b); i++ {
-		if i+7 <= len(b) && b[i:i+7] == "http://" {
-			out = append(out, []byte("HTTP")...)
-			i += 6
-		} else {
-			out = append(out, b[i])
+	src := []byte(b)
+	out := make([]byte, 0, len(src))
+	http := []byte("http://")
+	for i := 0; i < len(src); i++ {
+		if i+len(http) <= len(src) {
+			match := true
+			for k := 0; k < len(http); k++ {
+				if src[i+k] != http[k] {
+					match = false
+					break
+				}
+			}
+			if match {
+				out = append(out, []byte("HTTP")...)
+				i += len(http) - 1
+				continue
+			}
 		}
+		out = append(out, src[i])
 	}
 	return string(out)
 }
